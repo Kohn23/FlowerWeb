@@ -4,7 +4,7 @@
 
 import logging
 import threading
-from model_registry import ModelRegistry
+from .model_registry import ModelRegistry
 
 logger = logging.getLogger(__name__)
 

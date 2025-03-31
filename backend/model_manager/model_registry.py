@@ -4,7 +4,7 @@
 """
 
 from django.conf import settings
-from model_container import ClassificationModel
+from .model_container import ClassificationModel
 
 
 class ModelRegistry:
