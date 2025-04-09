@@ -18,8 +18,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app_classify.views import classify_image
+from app_transfer.views import generate_image
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('api/classify/', classify_image, name='classify'),
+    path('api/styletransfer/', generate_image, name='styletransfer')
 ]
