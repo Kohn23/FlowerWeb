@@ -108,6 +108,6 @@ class ClassificationModel(BaseModel):
         # 关键修改3：直接处理NumPy数组
         output_tensor = torch.from_numpy(output)
         top5_probs = torch.nn.functional.softmax(output_tensor, dim=1)
-        top5_values, top5_indices = torch.topk(top5_probs, 5)
-        top5_results = [(sorted_class_names[idx], prob.item()) for idx, prob in zip(top5_indices[0], top5_values[0])]
-        return top5_results
+        top3_values, top3_indices = torch.topk(top5_probs, 3)
+        top3_results = [(sorted_class_names[idx], prob.item()) for idx, prob in zip(top3_indices[0], top3_values[0])]
+        return top3_results

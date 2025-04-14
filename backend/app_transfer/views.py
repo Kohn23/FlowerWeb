@@ -11,8 +11,8 @@ from .utils.Response import StandardResponse
 def generate_image(request):
     if request.method == 'POST':
         # 获取上传的图片
-        content_image = request.FILES.get('contentImg')
-        style_image = request.FILES.get('styleImg')
+        content_image = request.FILES.get('contentImage')
+        style_image = request.FILES.get('styleImage')
 
         if not content_image or not style_image:
             return StandardResponse(status=400, success=False)
